@@ -7,7 +7,7 @@ jobs:
     runs-on: macos-latest # the machine type
     strategy: # we are using strategy if we need to run on parallel with different devices and version
       matrix:
-        api-level: [26] #Google api level for example [25,23,28] 
+        api-level: [25] #Google api level for example [25,23,28] 
         target: [default]
     steps:
     - uses: actions/checkout@v2 #checkout the code 
@@ -25,5 +25,5 @@ jobs:
         target: ${{ matrix.target }}
         arch: x86_64
         profile: Nexus 6
-        script: ./gradlew test --info # running our test with info to check the results
+        #script: ./gradlew test --info # running our test with info to check the results
         
